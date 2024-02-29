@@ -1,5 +1,7 @@
 # Test task
 
+<a href="https://ibb.co/5Y9sj4z"><img src="https://i.ibb.co/k3yqDBr/chrome-r6-Brcja-Tt3.png" alt="chrome-r6-Brcja-Tt3" border="0"></a>
+
 The application based on [ASP.NET Core app with React](https://learn.microsoft.com/en-us/visualstudio/javascript/tutorial-asp-net-core-with-react?view=vs-2022) template. 
  - .NET 8.0
  - Vite + React + TypeScript
