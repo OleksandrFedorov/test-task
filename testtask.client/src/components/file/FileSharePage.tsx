@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FileShare } from "./File";
 import FileCard from "./FileCard";
 import GetUrl from "../context/UrlContext";
@@ -13,6 +13,7 @@ export default function FileSharePage() {
   const url = GetUrl() + "files/shares/" + id;
   const [error, setError] = useState("");
   const [share, setFileShare] = useState<FileShare>();
+
   useEffect(() => {
     const fetchShare = async () => {
       fetch(url).then(async (response) => {
@@ -22,6 +23,9 @@ export default function FileSharePage() {
           const text = await response.text();
           const fileShare: FileShare = JSON.parse(text);
           setFileShare(fileShare);
+          if (new Date() > new Date(fileShare.expired)) {
+            setError("Share is expiried :(");
+          }
         }
       });
     };
@@ -34,16 +38,30 @@ export default function FileSharePage() {
     }, [share]);
   }
 
+  //refresh page every 10 secons if expiried
+  const navigate = useNavigate();
+  useEffect(() => {
+    const refreshPage = async () => {
+      if (new Date() >= new Date(share?.expired ?? "")) {
+        navigate(0);
+      }
+    };
+    const millisecondsToWait = 10000;
+    setTimeout(function () {
+      refreshPage();
+    }, millisecondsToWait);
+  });
+
   return (
     <>
       <div className="container py-4 px-3 mx-auto">
         <h2 className="title text-3xl font-bold m-3">
           {error || !share
             ? error
-            : "Shared intil " + new Date(share.expired).toUTCString()}
+            : "Shared until " + new Date(share.expired).toString()}
         </h2>
 
-        {share && (
+        {!error && share && (
           <>
             <FileCard
               userId=""
