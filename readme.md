@@ -25,7 +25,8 @@ Reasons for choice:
  - Local file storage: to imitate the self-hosted server
 
 -------------
-###How to run
+**How to run**
+                
 1.  Clone the project with Git or [Download Zip](https://github.com/OleksandrFedorov/test-task/archive/refs/heads/main.zip)
 2. Open `TestTask.sln` with Microsoft Visual Studio 2022 ("ASP.NET and web development" and "Node.js development" workloads from Visual Studio Installer are required)
 3. Configure the startup project:
@@ -56,7 +57,7 @@ Reasons for choice:
 That`s basically  it.
 
 -------------
-###What can be impoved? 
+**What can be impoved?**
 
 **Tech part:**
 - Add unit tests
@@ -70,13 +71,13 @@ That`s basically  it.
 - Share to specific user
 - Folders, groups, sorting
 -------------
-###Challenge Details
+**Challenge Details**
 
 The application is a document library intended to give its users a web based solution to store and share their documents with others.
 
 All the following requirements are what we provide. Make your assumptions when needed.
 
-###Functional Requirements:
+**Functional Requirements:**
 
 **Design and implement the application’s UI / API based on the requirements:**
 
@@ -106,10 +107,9 @@ All the following requirements are what we provide. Make your assumptions when n
 - Ideas and proposals how to improve the application from a user or technical perspective
 
 -------------
-###Used guides
-[React Tutorial for Beginners](https://youtu.be/SqcY0GlETPk?si=mdsCS7kjdR3EmzUi)
-[React File Upload Tutorial with Drag-n-Drop and ProgressBar](https://youtu.be/MAw0lQKqjRA?si=ZWOlraVNioU6aSKs)
-[Drag and dropping files in React using react-dropzone](https://youtu.be/eGVC8UUqCBE?si=5bzcPtIRuvYLEtR5)
+**Used guides**  
+[React Tutorial for Beginners](https://youtu.be/SqcY0GlETPk?si=mdsCS7kjdR3EmzUi)  
+[React File Upload Tutorial with Drag-n-Drop and ProgressBar](https://youtu.be/MAw0lQKqjRA?si=ZWOlraVNioU6aSKs)  
+[Drag and dropping files in React using react-dropzone](https://youtu.be/eGVC8UUqCBE?si=5bzcPtIRuvYLEtR5)  
 
 -------------
-###End
