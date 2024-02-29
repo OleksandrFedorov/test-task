@@ -4,6 +4,12 @@ import { User, UserContext } from "../context/UserContext";
 import GetUrl from "../context/UrlContext";
 
 export default function Register() {
+  {
+    useEffect(() => {
+      document.title = "Register";
+    }, []);
+  }
+
   const { user, setUser } = useContext(UserContext);
   const [values, setValues] = useState({
     name: "",

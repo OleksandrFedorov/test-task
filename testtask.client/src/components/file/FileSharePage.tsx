@@ -28,6 +28,11 @@ export default function FileSharePage() {
 
     fetchShare();
   }, []);
+  {
+    useEffect(() => {
+      document.title = share?.file?.name ?? "Share";
+    }, [share]);
+  }
 
   return (
     <>

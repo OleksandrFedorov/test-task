@@ -1,9 +1,15 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { UserContext, UserSession } from "../context/UserContext";
 import GetUrl from "../context/UrlContext";
 
 export default function Login() {
+  {
+    useEffect(() => {
+      document.title = "Login";
+    }, []);
+  }
+
   const { user, setUser } = useContext(UserContext);
   const [values, setValues] = useState({
     name: "",
