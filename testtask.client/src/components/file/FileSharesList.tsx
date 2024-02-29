@@ -1,4 +1,3 @@
-import { useId } from "react";
 import { FileShare } from "../file/File";
 import { FileSharesListElement } from "./FileSharesListElement";
 
@@ -11,7 +10,7 @@ export function FileSharesList({ shares }: Props) {
     <>
       <ul className="list-group mb-1">
         {shares.map((item) => (
-          <FileSharesListElement share={item} key={useId()} />
+          <FileSharesListElement share={item} key={item + "_element"} />
         ))}
       </ul>
     </>
