@@ -14,14 +14,15 @@ namespace TestTask.Services.File
 
         #region File share
 
-        public async Task<FileShareDto> ShareAsync(Guid fileId, DateTime expired, CancellationToken cancellationToken)
+        public async Task<FileShareDto> ShareAsync(FileShareCreateRequestDto dto, CancellationToken cancellationToken)
         {
-            var fileDb = await _repository.FileDataAccess.GetByIdAsync(fileId, cancellationToken);
+            var fileDb = await _repository.FileDataAccess.GetByIdAsync(dto.FileId, cancellationToken);
             if (fileDb is null)
             {
                 return null;
             }
 
+            var expired = DateTime.Now.AddDays(dto.Days).AddHours(dto.Hours).AddMinutes(dto.Minutes);
             var shareDb = new Data.Entity.FileShare()
             {
                 File = fileDb,

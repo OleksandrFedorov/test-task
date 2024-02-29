@@ -71,7 +71,7 @@ export default function FileCard({
   const [error, setError] = useState("");
   const [isShare, setIsShare] = useState(false);
 
-  const created = new Date(file.created).toUTCString();
+  const created = new Date(file.created).toString();
   const icon = getFileIcon(file.type);
   const thumbnail =
     file.type === 4 ? (

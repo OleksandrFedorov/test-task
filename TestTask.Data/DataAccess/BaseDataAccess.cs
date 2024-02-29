@@ -27,7 +27,7 @@ namespace TestTask.Data.DataAccess
         public async Task<T> AddAsync(T entity, CancellationToken cancellationToken)
         {
             entity.Id = Guid.Empty;
-            entity.Created = DateTime.UtcNow;
+            entity.Created = DateTime.Now;
             await _appContext.Set<T>().AddAsync(entity, cancellationToken);
             await _appContext.SaveChangesAsync(cancellationToken);
             return entity;
@@ -38,7 +38,7 @@ namespace TestTask.Data.DataAccess
             entities.ForEach(e =>
             {
                 e.Id = Guid.Empty;
-                e.Created = DateTime.UtcNow;
+                e.Created = DateTime.Now;
             });
             await _appContext.Set<T>().AddRangeAsync(entities, cancellationToken);
             await _appContext.SaveChangesAsync(cancellationToken);

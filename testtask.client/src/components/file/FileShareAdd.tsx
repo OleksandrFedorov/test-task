@@ -23,24 +23,19 @@ export default function FileShareAdd({ fileId }: Props) {
     set(value);
   }
 
-  function getDate(): string {
-    const expiried =
-      new Date().getTime() +
-      days * 1000 * 60 * 60 * 24 +
-      hours * 1000 * 60 * 60 +
-      minutes * 1000 * 60;
-
-    return new Date(expiried).toUTCString();
-  }
-
   function add() {
-    if (days >= 0 && hours >= 0 && minutes >= 0) {
-      const formData = new FormData();
-      formData.append("expired", getDate());
+    if (days > 0 || hours > 0 || minutes > 0) {
+      const data = {
+        fileId: fileId,
+        days: days,
+        hours: hours,
+        minutes: minutes,
+      };
 
-      fetch(GetUrl() + "files/shares/" + fileId, {
+      fetch(GetUrl() + "files/shares/", {
         method: "PUT",
-        body: formData,
+        body: JSON.stringify(data),
+        headers: new Headers({ "content-type": "application/json" }),
       });
     }
   }

@@ -9,7 +9,6 @@ interface Props {
 export function FileSharesListElement({ share }: Props) {
   const fileShareUrl = "https://localhost:5173/" + "shares/" + share.id;
   const expiredDate = new Date(share.expired);
-  const expired = expiredDate.toUTCString();
   const className =
     expiredDate < new Date()
       ? "list-group-item list-group-item-warning d-flex justify-content-between align-items-center"
@@ -24,7 +23,7 @@ export function FileSharesListElement({ share }: Props) {
   return (
     <>
       <li className={className} key={share.id}>
-        <span>Until: {expired}</span>
+        <span>Until: {share.expired}</span>
 
         <div className="d-flex gap-1">
           <Button

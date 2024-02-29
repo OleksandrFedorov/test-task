@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using TestTask.Dto.File;
 using TestTask.Services.File;
 
 namespace TestTask.Server.Controllers
@@ -147,13 +148,13 @@ namespace TestTask.Server.Controllers
         /// <response code="200">Success creation.</response>
         /// <response code="200">File was not found.</response>
         /// <response code="500">Internal server error.</response>
-        [HttpPut("shares/{fileId}")]
+        [HttpPut("shares")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> CreateFileSharesByFileIdAsync(Guid fileId, [FromForm] DateTime expired, CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateFileSharesByFileIdAsync(FileShareCreateRequestDto dto, CancellationToken cancellationToken)
         {
             try
             {
-                var share = await _fileService.ShareAsync(fileId, expired, cancellationToken);
+                var share = await _fileService.ShareAsync(dto, cancellationToken);
                 if (share is null)
                 {
                     return NotFound();
