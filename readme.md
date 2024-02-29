@@ -107,10 +107,8 @@ All the following requirements are what we provide. Make your assumptions when n
 
 -------------
 ###Used guides
-[React Tutorial for Beginners
-](https://youtu.be/SqcY0GlETPk?si=mdsCS7kjdR3EmzUi)
-[React File Upload Tutorial with Drag-n-Drop and ProgressBar
-](https://youtu.be/MAw0lQKqjRA?si=ZWOlraVNioU6aSKs)
+[React Tutorial for Beginners](https://youtu.be/SqcY0GlETPk?si=mdsCS7kjdR3EmzUi)
+[React File Upload Tutorial with Drag-n-Drop and ProgressBar](https://youtu.be/MAw0lQKqjRA?si=ZWOlraVNioU6aSKs)
 [Drag and dropping files in React using react-dropzone](https://youtu.be/eGVC8UUqCBE?si=5bzcPtIRuvYLEtR5)
 
 -------------
