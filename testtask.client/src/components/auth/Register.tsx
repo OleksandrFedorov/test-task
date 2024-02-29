@@ -114,7 +114,7 @@ export default function Register() {
                 Welcome {user.name}!
               </h2>
               <p className="mt-3">
-                <Link to={"/Logion"}>Login</Link>
+                <Link to={"/login"}>Login</Link>
               </p>
             </>
           )}
