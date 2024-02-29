@@ -72,6 +72,7 @@ export default function FileCard({
   const [isShare, setIsShare] = useState(false);
 
   const created = new Date(file.created).toUTCString();
+  const icon = getFileIcon(file.type);
   const thumbnail =
     file.type === 4 ? (
       <p className="fs-6 text-break">{file.thumbnail}</p>
@@ -82,7 +83,7 @@ export default function FileCard({
         className="border mx-auto"
       />
     ) : (
-      <i className="bi bi-image" />
+      <span className="fs-1">{icon}</span>
     );
   const downloadButton = (
     <button className="btn btn-success btn-sm" onClick={onDownload}>
@@ -120,7 +121,7 @@ export default function FileCard({
           <div className="col-md-8">
             <div className="card-body">
               <h5 className="card-title text-break">
-                {file.name} {getFileIcon(file.type)}
+                {file.name} {icon}
               </h5>
               <p className="card-text">Created: {created}</p>
               {
