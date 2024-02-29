@@ -18,7 +18,11 @@ export default function Files() {
 
   return (
     <>
-      <Header userName={user.name} logOut={logOut} />
+      <Header
+        userSession={user.sessionId}
+        userName={user.name}
+        logOut={logOut}
+      />
       <div className="container px-1 mx-auto">
         <h1 className="title text-3xl font-bold m-3">Upload Files</h1>
 
