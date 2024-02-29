@@ -12,7 +12,6 @@ namespace TestTask.Data.Mapping
 
             modelBuilder.ApplyConfiguration(new FileMapper());
             modelBuilder.ApplyConfiguration(new UserMapper());
-            modelBuilder.ApplyConfiguration(new UserSessionMapper());
         }
     }
 }
